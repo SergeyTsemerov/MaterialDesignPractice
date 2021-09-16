@@ -9,4 +9,15 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_gray">#66000000</color>
     <color name="loadingBackground">#A0FFFFFF</color>
+    <color name="red_A700">#D50000</color>
+    <color name="gray_700">#616161</color>
+    <color name="blue_gray_500">#607D8B</color>
+    <color name="teal50_600">#00897B</color>
+    <color name="blue_gray_100">#CFD8DC</color>
+    <color name="gray50_300">#E0E0E0</color>
+    <color name="hint_text_color">#1a237e</color>
+    <color name="settings_text_color">#FFFFFFFF</color>
+    <color name="settings_default_btn">#0000FF</color>
+    <color name="settings_another_btn">#1E90FF</color>
+    <color name="settings_amazing_btn">#7c4dff</color>
 </resources>
