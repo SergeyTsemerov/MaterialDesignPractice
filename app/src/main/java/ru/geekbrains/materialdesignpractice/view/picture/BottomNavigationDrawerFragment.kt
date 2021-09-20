@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ru.geekbrains.materialdesignpractice.R
 import ru.geekbrains.materialdesignpractice.databinding.BottomNavigationLayoutBinding
-import ru.geekbrains.materialdesignpractice.view.showToastLong
 import ru.geekbrains.materialdesignpractice.view.showToastShort
 
 class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {

@@ -13,4 +13,8 @@
     <string name="settings_another_style">Another amazing theme</string>
     <string name="settings_amazing_style">Amazing theme</string>
     <string name="settings_default_style">Default</string>
+    <string name="satellite">Satellite</string>
+    <string name="mars">Mars</string>
+    <string name="earth">Earth</string>
+    <string name="additional_nasa_content">Additional NASA Content</string>
 </resources>

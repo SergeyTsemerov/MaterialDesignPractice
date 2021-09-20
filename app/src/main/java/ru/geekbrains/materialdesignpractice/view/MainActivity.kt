@@ -8,7 +8,6 @@ import ru.geekbrains.materialdesignpractice.view.picture.PODFragment
 
 const val FirstTheme = 1
 const val SecondTheme = 2
-const val ThirdTheme = 3
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,8 +43,7 @@ class MainActivity : AppCompatActivity() {
     private fun getRealStyle(currentTheme: Int): Int {
         return when (currentTheme) {
             FirstTheme -> R.style.Theme_MaterialDesignPractice_MyThemeNumber1
-            SecondTheme -> R.style.Theme_MaterialDesignPractice_MyThemeNumber2
-            ThirdTheme -> R.style.Theme_MaterialDesignPractice
+            SecondTheme -> R.style.Theme_MaterialDesignPractice
             else -> 0
         }
     }

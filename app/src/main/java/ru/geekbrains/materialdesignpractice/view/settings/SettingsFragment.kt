@@ -11,7 +11,6 @@ import ru.geekbrains.materialdesignpractice.databinding.FragmentSettingsBinding
 import ru.geekbrains.materialdesignpractice.view.MainActivity
 import ru.geekbrains.materialdesignpractice.view.FirstTheme
 import ru.geekbrains.materialdesignpractice.view.SecondTheme
-import ru.geekbrains.materialdesignpractice.view.ThirdTheme
 
 class SettingsFragment : Fragment() {
 
@@ -44,19 +43,15 @@ class SettingsFragment : Fragment() {
             parentActivity.setCurrentTheme(FirstTheme)
             parentActivity.recreate()
         }
-        binding.anotherAmazingTheme.setOnClickListener {
-            parentActivity.setCurrentTheme(SecondTheme)
-            parentActivity.recreate()
-        }
+
         binding.defaultTheme.setOnClickListener {
-            parentActivity.setCurrentTheme(ThirdTheme)
+            parentActivity.setCurrentTheme(SecondTheme)
             parentActivity.recreate()
         }
 
         when (parentActivity.getCurrentTheme()) {
             1 -> binding.radioGroup.check(R.id.amazingTheme)
-            2 -> binding.radioGroup.check(R.id.anotherAmazingTheme)
-            3 -> binding.radioGroup.check(R.id.defaultTheme)
+            2 -> binding.radioGroup.check(R.id.defaultTheme)
         }
     }
 

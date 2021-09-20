@@ -18,13 +18,6 @@
             android:text="@string/settings_amazing_style" />
 
         <RadioButton
-            android:id="@+id/anotherAmazingTheme"
-            android:layout_width="@dimen/another_theme_btn_width"
-            android:layout_height="@dimen/another_theme_btn_height"
-            android:background="@color/settings_another_btn"
-            android:text="@string/settings_another_style" />
-
-        <RadioButton
             android:id="@+id/defaultTheme"
             android:layout_width="@dimen/default_theme_btn_width"
             android:layout_height="@dimen/default_theme_btn_height"
