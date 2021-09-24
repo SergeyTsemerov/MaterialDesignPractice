@@ -1,7 +1,6 @@
 package ru.geekbrains.materialdesignpractice.view.picture
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import androidx.core.content.ContextCompat
@@ -83,13 +82,6 @@ class PODFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
         viewModel.sendPODServerRequest()
-        binding.inputLayout.setEndIconOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW).apply {
-                data =
-                    Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
-            }
-            startActivity(intent)
-        }
     }
 
     private fun renderData(data: NASAData) {
@@ -137,6 +129,12 @@ class PODFragment : Fragment() {
             }
             R.id.additionalNASAContent -> {
                 startActivity(Intent(context, ApiActivity::class.java))
+            }
+            R.id.wikipediaSearch -> {
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, WikipediaSearchFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
             }
         }
         return super.onOptionsItemSelected(item)
