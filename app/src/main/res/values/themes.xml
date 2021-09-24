@@ -38,8 +38,4 @@
         <item name="colorSecondary">@color/gray_700</item>
     </style>
 
-    <style name="Theme.MaterialDesignPractice.MyThemeNumber2" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/teal50_600</item>
-        <item name="colorSecondary">@color/blue_gray_100</item>
-    </style>
 </resources>

@@ -1,7 +1,6 @@
 package ru.geekbrains.materialdesignpractice.view.picture
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import androidx.core.content.ContextCompat
@@ -10,21 +9,22 @@ import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import ru.geekbrains.materialdesignpractice.R
+import ru.geekbrains.materialdesignpractice.api.ApiActivity
 import ru.geekbrains.materialdesignpractice.databinding.FragmentMainBinding
 import ru.geekbrains.materialdesignpractice.view.MainActivity
 import ru.geekbrains.materialdesignpractice.view.settings.SettingsFragment
 import ru.geekbrains.materialdesignpractice.view.showSnackBar
 import ru.geekbrains.materialdesignpractice.view.showToastLong
-import ru.geekbrains.materialdesignpractice.viewmodel.PODData
-import ru.geekbrains.materialdesignpractice.viewmodel.PODViewModel
+import ru.geekbrains.materialdesignpractice.viewmodel.NASAData
+import ru.geekbrains.materialdesignpractice.viewmodel.NASAViewModel
 
 class PODFragment : Fragment() {
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: PODViewModel by lazy {
-        ViewModelProvider(this).get(PODViewModel::class.java)
+    private val viewModel: NASAViewModel by lazy {
+        ViewModelProvider(this).get(NASAViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -71,7 +71,6 @@ class PODFragment : Fragment() {
                 binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
             }
         }
-
     }
 
     override fun onDestroyView() {
@@ -82,32 +81,25 @@ class PODFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
-        viewModel.sendServerRequest()
-        binding.inputLayout.setEndIconOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW).apply {
-                data =
-                    Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
-            }
-            startActivity(intent)
-        }
+        viewModel.sendPODServerRequest()
     }
 
-    private fun renderData(data: PODData) {
+    private fun renderData(data: NASAData) {
         when (data) {
-            is PODData.Error -> {
+            is NASAData.Error -> {
                 binding.main.showSnackBar(getString(R.string.Error))
             }
-            is PODData.Loading -> {
+            is NASAData.Loading -> {
                 binding.imageView.load(R.drawable.progress_animation) {
                     error(R.drawable.ic_load_error_vector)
                 }
             }
-            is PODData.Success -> {
+            is NASAData.PODSuccess -> {
                 binding.imageView.load(data.serverResponseData.url) {
                     placeholder(R.drawable.progress_animation)
                     error(R.drawable.ic_load_error_vector)
                 }
-                binding.textView.text = data.serverResponseData.explanation
+                binding.descriptionTextView.text = data.serverResponseData.explanation
             }
         }
     }
@@ -124,7 +116,7 @@ class PODFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.appBarDescription -> {
-                binding.main.showToastLong(binding.textView.text.toString())
+                binding.main.showToastLong(binding.descriptionTextView.text.toString())
             }
             R.id.appBarSettings -> {
                 requireActivity().supportFragmentManager.beginTransaction()
@@ -134,6 +126,15 @@ class PODFragment : Fragment() {
             }
             android.R.id.home -> {
                 BottomNavigationDrawerFragment().show(requireActivity().supportFragmentManager, "")
+            }
+            R.id.additionalNASAContent -> {
+                startActivity(Intent(context, ApiActivity::class.java))
+            }
+            R.id.wikipediaSearch -> {
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, WikipediaSearchFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
             }
         }
         return super.onOptionsItemSelected(item)

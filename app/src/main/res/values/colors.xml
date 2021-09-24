@@ -20,4 +20,6 @@
     <color name="settings_default_btn">#0000FF</color>
     <color name="settings_another_btn">#1E90FF</color>
     <color name="settings_amazing_btn">#7c4dff</color>
+    <color name="colorAccent">#2962FF</color>
+    <color name="colorAccent40Alfa">#662962FF</color>
 </resources>

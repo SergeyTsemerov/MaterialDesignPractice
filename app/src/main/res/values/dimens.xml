@@ -11,4 +11,11 @@
     <dimen name="default_theme_btn_height">58dp</dimen>
     <dimen name="settings_text_view_width">280dp</dimen>
     <dimen name="settings_text_view_height">51dp</dimen>
+    <dimen name="swipe_indicator_margin_bottom">100dp</dimen>
+    <dimen name="swipe_indicator_layout_margin">10dp</dimen>
+    <dimen name="tab_layout_drawable_padding">10dp</dimen>
+    <dimen name="tab_layout_item_text_size">20sp</dimen>
+    <dimen name="wikipedia_text_input_padding_start">20dp</dimen>
+    <dimen name="explanation_text_size">22sp</dimen>
+    <dimen name="wikipedia_logo_layout_height">450dp</dimen>
 </resources>
