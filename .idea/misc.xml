@@ -4,14 +4,45 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable-v24/ic_wikipedia_for_menu.xml" value="0.28229166666666666" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/bg_earth.xml" value="0.14635416666666667" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_back_fab.xml" value="0.2703125" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_baseline_description_24.xml" value="0.2703125" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_baseline_photo_library_24.xml" value="0.2703125" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_hamburger_menu_bottom_bar.xml" value="0.2703125" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_load_error_vector.xml" value="0.2703125" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_no_photo_vector.xml" value="0.2703125" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_settings_menu.xml" value="0.2703125" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_wikipedia.xml" value="0.2703125" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/progress_animation.xml" value="0.2703125" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/swipe_indicator_active.xml" value="0.2703125" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/swipe_indicator_passive.xml" value="0.2703125" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_api.xml" value="0.223731884057971" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_api_tablayout_earth.xml" value="0.223731884057971" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_api_tablayout_item.xml" value="0.223731884057971" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_api_tablayout_mars.xml" value="0.223731884057971" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_api_tablayout_satellite.xml" value="0.223731884057971" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_api_tablayout_system.xml" value="0.223731884057971" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/botoom_navigation_layout.xml" value="0.23324275362318841" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/bottom_navigation_layout.xml" value="0.223731884057971" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.23777173913043478" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/fragment_earth.xml" value="0.1852355072463768" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/fragment_main.xml" value="0.264" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/fragment_mars.xml" value="0.223731884057971" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/fragment_satellite.xml" value="0.223731884057971" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/fragment_settings.xml" value="0.23324275362318841" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/fragment_system.xml" value="0.223731884057971" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/fragment_wikipedia.xml" value="0.213768115942029" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/fragment_wikipedia_end.xml" value="0.213768115942029" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/fragment_wikipedia_start.xml" value="0.213768115942029" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/menu/menu_bottom_bar.xml" value="0.25416666666666665" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/menu/menu_bottom_bar_other_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.25416666666666665" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/xml/motion_scene.xml" value="0.213768115942029" />
       </map>
     </option>
   </component>

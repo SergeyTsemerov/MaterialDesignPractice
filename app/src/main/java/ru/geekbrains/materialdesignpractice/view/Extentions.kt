@@ -8,6 +8,11 @@ fun View.showSnackBar(text: String) {
     Snackbar.make(this, text, Snackbar.LENGTH_INDEFINITE).show()
 }
 
-fun View.showToast(text: String) {
+fun View.showToastShort(text: String) {
     Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
+}
+
+fun View.showToastLong(text: String) {
+    Toast.makeText(context, text, Toast.LENGTH_LONG).show()
+
 }

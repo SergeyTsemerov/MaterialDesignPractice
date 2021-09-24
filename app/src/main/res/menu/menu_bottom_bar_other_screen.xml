@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/additionalNASAContent"
+        android:icon="@drawable/ic_baseline_photo_library_24"
+        android:title="@string/additional_nasa_content"
+        app:showAsAction="ifRoom" />
+
+</menu>
