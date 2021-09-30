@@ -8,6 +8,7 @@
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/bg_earth.xml" value="0.14635416666666667" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_back_fab.xml" value="0.2703125" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_baseline_description_24.xml" value="0.2703125" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_baseline_note_24.xml" value="0.2703125" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_baseline_photo_library_24.xml" value="0.2703125" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_hamburger_menu_bottom_bar.xml" value="0.2703125" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
@@ -27,6 +28,10 @@
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_api_tablayout_satellite.xml" value="0.223731884057971" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_api_tablayout_system.xml" value="0.223731884057971" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_recycler.xml" value="0.19157608695652173" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_recycler_item_earth.xml" value="0.19157608695652173" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_recycler_item_header.xml" value="0.19157608695652173" />
+        <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/activity_recycler_item_mars.xml" value="0.19157608695652173" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/botoom_navigation_layout.xml" value="0.23324275362318841" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/bottom_navigation_layout.xml" value="0.223731884057971" />
         <entry key="..\:/GeekBrains/Android/MaterialDesignPractice/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.23777173913043478" />

@@ -77,7 +77,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/optionOneContainer"
+            android:id="@+id/toDoNotesContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
@@ -91,14 +91,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginEnd="@dimen/option_one_text_margin_end"
-                android:text="@string/option_one"
+                android:text="@string/to_do_notes"
                 android:textStyle="bold"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_archive"
+                app:srcCompat="@drawable/ic_baseline_note_24"
                 android:contentDescription="@string/option_one_icon" />
 
         </LinearLayout>

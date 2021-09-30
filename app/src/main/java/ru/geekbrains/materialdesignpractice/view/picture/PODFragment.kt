@@ -14,6 +14,7 @@ import ru.geekbrains.materialdesignpractice.R
 import ru.geekbrains.materialdesignpractice.api.ApiActivity
 import ru.geekbrains.materialdesignpractice.databinding.FragmentMainBinding
 import ru.geekbrains.materialdesignpractice.view.MainActivity
+import ru.geekbrains.materialdesignpractice.view.recycler.RecyclerActivity
 import ru.geekbrains.materialdesignpractice.view.settings.SettingsFragment
 import ru.geekbrains.materialdesignpractice.view.showSnackBar
 import ru.geekbrains.materialdesignpractice.view.showToastLong
@@ -85,7 +86,7 @@ class PODFragment : Fragment() {
         binding.transparentBackground.apply {
             alpha = 0f
         }
-        binding.optionOneContainer.apply {
+        binding.toDoNotesContainer.apply {
             alpha = 0f
             isClickable = false
         }
@@ -109,14 +110,14 @@ class PODFragment : Fragment() {
                 }
             })
 
-        binding.optionOneContainer.animate()
+        binding.toDoNotesContainer.animate()
             .alpha(1f)
             .setDuration(300)
             .setListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) {
-                    binding.optionOneContainer.isClickable = true
-                    binding.optionOneContainer.setOnClickListener {
-                        binding.optionOneContainer.showToastShort(getString(R.string.option_one))
+                    binding.toDoNotesContainer.isClickable = true
+                    binding.toDoNotesContainer.setOnClickListener {
+                        startActivity(Intent(context, RecyclerActivity::class.java))
                     }
                 }
             })
@@ -142,12 +143,12 @@ class PODFragment : Fragment() {
                 }
             })
 
-        binding.optionOneContainer.animate()
+        binding.toDoNotesContainer.animate()
             .alpha(0f)
             .setDuration(300)
             .setListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) {
-                    binding.optionOneContainer.isClickable = false
+                    binding.toDoNotesContainer.isClickable = false
                 }
             })
 

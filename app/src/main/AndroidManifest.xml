@@ -15,6 +15,9 @@
             android:name=".api.ApiActivity"
             android:exported="true" />
         <activity
+            android:name=".view.recycler.RecyclerActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
