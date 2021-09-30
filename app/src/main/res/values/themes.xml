@@ -30,7 +30,7 @@
     <style name="MyBottomAppBar" parent="Widget.MaterialComponents.BottomAppBar">
         <item name="backgroundTint">@color/blue_gray_500</item>
         <item name="android:layout_gravity">bottom</item>
-        <item name="fabAlignmentMode">center</item>
+        <item name="fabAlignmentMode">end</item>
     </style>
 
     <style name="Theme.MaterialDesignPractice.MyThemeNumber1" parent="Theme.MaterialComponents.DayNight.NoActionBar">

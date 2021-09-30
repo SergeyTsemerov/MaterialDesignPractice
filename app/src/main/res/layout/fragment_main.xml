@@ -28,6 +28,7 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="centerInside"
             android:layout_gravity="center"
             android:contentDescription="@string/photo_of_the_day_stub"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -62,6 +63,74 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
     </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/transparentBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@android:color/white"
+        android:clickable="false"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/optionOneContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/option_one_container_padding_end"
+            android:paddingStart="@dimen/option_one_container_padding_start"
+            android:paddingBottom="@dimen/option_one_container_padding_Bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/option_one_text_margin_end"
+                android:text="@string/option_one"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_archive"
+                android:contentDescription="@string/option_one_icon" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/optionTwoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/option_two_container_padding_end"
+            android:paddingStart="@dimen/option_two_container_padding_start"
+            android:paddingBottom="@dimen/option_two_container_padding_bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/option_two_text_margin_end"
+                android:text="@string/option_two"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                app:srcCompat="@drawable/ic_send"
+                android:contentDescription="@string/option_two_icon" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"

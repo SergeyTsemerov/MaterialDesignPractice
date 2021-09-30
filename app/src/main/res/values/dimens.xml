@@ -16,6 +16,15 @@
     <dimen name="tab_layout_drawable_padding">10dp</dimen>
     <dimen name="tab_layout_item_text_size">20sp</dimen>
     <dimen name="wikipedia_text_input_padding_start">20dp</dimen>
-    <dimen name="explanation_text_size">22sp</dimen>
+    <dimen name="explanation_text_size">20sp</dimen>
     <dimen name="wikipedia_logo_layout_height">450dp</dimen>
+    <dimen name="option_one_container_padding_end">32dp</dimen>
+    <dimen name="option_one_container_padding_start">32dp</dimen>
+    <dimen name="option_one_container_padding_Bottom">160dp</dimen>
+    <dimen name="option_one_text_margin_end">5dp</dimen>
+    <dimen name="option_two_container_padding_end">32dp</dimen>
+    <dimen name="option_two_container_padding_start">32dp</dimen>
+    <dimen name="option_two_container_padding_bottom">110dp</dimen>
+    <dimen name="option_two_text_margin_end">5dp</dimen>
+    <dimen name="hint_wiki_text_size">25sp</dimen>
 </resources>

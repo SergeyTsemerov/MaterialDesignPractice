@@ -4,8 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.transition.ChangeBounds
+import androidx.transition.ChangeImageTransform
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import coil.load
 import ru.geekbrains.materialdesignpractice.BuildConfig
 import ru.geekbrains.materialdesignpractice.R
@@ -15,6 +20,8 @@ import ru.geekbrains.materialdesignpractice.viewmodel.NASAData
 import ru.geekbrains.materialdesignpractice.viewmodel.NASAViewModel
 
 class EarthFragment : Fragment() {
+
+    private var isExpanded = false
 
     private var _binding: FragmentEarthBinding? = null
     private val binding get() = _binding!!
@@ -41,6 +48,29 @@ class EarthFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
         viewModel.sendEarthImageRequest()
+        binding.earthImageView.setOnClickListener {
+            isExpanded = !isExpanded
+            TransitionManager.beginDelayedTransition(
+                binding.earthContainer, TransitionSet()
+                    .addTransition(ChangeBounds())
+                    .addTransition(ChangeImageTransform())
+            )
+
+            val params: ViewGroup.LayoutParams = binding.earthImageView.layoutParams
+            params.height =
+                if (isExpanded) {
+                    ViewGroup.LayoutParams.MATCH_PARENT
+                } else {
+                    ViewGroup.LayoutParams.MATCH_PARENT
+                }
+            binding.earthImageView.layoutParams = params
+            binding.earthImageView.scaleType =
+                if (isExpanded) {
+                    ImageView.ScaleType.CENTER_CROP
+                } else {
+                    ImageView.ScaleType.FIT_CENTER
+                }
+        }
     }
 
     private fun renderData(data: NASAData) {
@@ -55,9 +85,9 @@ class EarthFragment : Fragment() {
             }
             is NASAData.EarthSuccess -> {
                 val strDate = data.earthResponseData.last().date?.split(" ")?.first()
-                val image =data.earthResponseData.last().image
+                val image = data.earthResponseData.last().image
                 val url = "https://api.nasa.gov/EPIC/archive/natural/" +
-                        strDate?.replace("-","/",true) +
+                        strDate?.replace("-", "/", true) +
                         "/png/" +
                         "$image" +
                         ".png?api_key=${BuildConfig.NASA_API_KEY}"

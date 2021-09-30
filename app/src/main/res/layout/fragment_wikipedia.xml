@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragmentWikipedia"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingStart="@dimen/main_constraint_padding_start"
-    android:paddingEnd="@dimen/main_constraint_padding_end"
-    app:layoutDescription="@xml/motion_scene">
+    android:paddingEnd="@dimen/main_constraint_padding_end">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLine1"
@@ -55,7 +55,21 @@
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/helperText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/exocet_heavy"
+        android:text="@string/hint_text_wiki"
+        android:textAlignment="center"
+        android:textSize="@dimen/hint_wiki_text_size"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guideLine3"
+        app:layout_constraintEnd_toEndOf="@id/guideLine2"
+        app:layout_constraintStart_toStartOf="@id/guideLine1" />
+
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mainWikiImageButton"
         android:layout_width="match_parent"
         android:layout_height="@dimen/wikipedia_logo_layout_height"
         android:background="@drawable/ic_wikipedia"
@@ -64,4 +78,4 @@
         app:layout_constraintStart_toStartOf="@+id/guideLine1"
         app:layout_constraintTop_toBottomOf="@+id/guideLine3" />
 
-</androidx.constraintlayout.motion.widget.MotionLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
