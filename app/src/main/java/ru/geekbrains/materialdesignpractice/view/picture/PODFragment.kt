@@ -3,6 +3,7 @@ package ru.geekbrains.materialdesignpractice.view.picture
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.*
 import androidx.core.content.ContextCompat
@@ -188,7 +189,13 @@ class PODFragment : Fragment() {
                     placeholder(R.drawable.progress_animation)
                     error(R.drawable.ic_load_error_vector)
                 }
-                binding.descriptionTextView.text = data.serverResponseData.explanation
+                data.serverResponseData.explanation?.let {
+                    binding.descriptionTextView.text = it
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        binding.descriptionTextView.typeface =
+                            resources.getFont(R.font.x_files_font)
+                    }
+                }
             }
         }
     }
