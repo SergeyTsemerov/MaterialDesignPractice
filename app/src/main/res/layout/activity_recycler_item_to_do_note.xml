@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/toDoNoteImageView"
+        android:layout_width="@dimen/to_do_note_image_view_layout_width"
+        android:layout_height="@dimen/to_do_note_image_view_layout_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/note" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/toDoNoteDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/to_do_note_description_padding"
+        android:text="@string/to_do_note"
+        android:textColor="@color/description_text_color"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toDoNoteImageView"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/toDoNoteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to_do_note"
+        android:textSize="@dimen/to_do_note_name_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/toDoNoteImageView"
+        app:layout_constraintStart_toEndOf="@+id/toDoNoteImageView"
+        app:layout_constraintTop_toTopOf="@+id/toDoNoteImageView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/addItemImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/add_item_image_view_layout_margin"
+        android:background="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dragHandleImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_plus_fab" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/removeItemImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/remove_item_image_view_layout_margin"
+        app:layout_constraintEnd_toStartOf="@+id/dragHandleImageView"
+        app:layout_constraintTop_toBottomOf="@+id/addItemImageView"
+        app:srcCompat="@drawable/ic_archive" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/dragHandleImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/drag_handle_image_view_layout_margin"
+        android:tint="@color/cardview_shadow_start_color"
+        app:layout_constraintBottom_toBottomOf="@+id/toDoNoteTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toDoNoteTextView"
+        app:srcCompat="@drawable/ic_hamburger_menu_bottom_bar"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_layout_height"
+        android:background="@color/view_layout_background"
+        app:layout_constraintBottom_toBottomOf="@+id/toDoNoteDescriptionTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

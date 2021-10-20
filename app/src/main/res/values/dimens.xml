@@ -16,6 +16,26 @@
     <dimen name="tab_layout_drawable_padding">10dp</dimen>
     <dimen name="tab_layout_item_text_size">20sp</dimen>
     <dimen name="wikipedia_text_input_padding_start">20dp</dimen>
-    <dimen name="explanation_text_size">22sp</dimen>
+    <dimen name="explanation_text_size">20sp</dimen>
     <dimen name="wikipedia_logo_layout_height">450dp</dimen>
+    <dimen name="option_one_container_padding_end">32dp</dimen>
+    <dimen name="option_one_container_padding_start">32dp</dimen>
+    <dimen name="option_one_container_padding_Bottom">160dp</dimen>
+    <dimen name="option_one_text_margin_end">5dp</dimen>
+    <dimen name="option_two_container_padding_end">32dp</dimen>
+    <dimen name="option_two_container_padding_start">32dp</dimen>
+    <dimen name="option_two_container_padding_bottom">110dp</dimen>
+    <dimen name="option_two_text_margin_end">5dp</dimen>
+    <dimen name="hint_wiki_text_size">25sp</dimen>
+    <dimen name="to_do_note_image_view_layout_width">80dp</dimen>
+    <dimen name="to_do_note_image_view_layout_height">80dp</dimen>
+    <dimen name="to_do_note_description_padding">10dp</dimen>
+    <dimen name="to_do_note_name_text_size">35sp</dimen>
+    <dimen name="add_item_image_view_layout_margin">10dp</dimen>
+    <dimen name="remove_item_image_view_layout_margin">10dp</dimen>
+    <dimen name="drag_handle_image_view_layout_margin">15dp</dimen>
+    <dimen name="view_layout_height">1px</dimen>
+    <dimen name="header_padding">15dp</dimen>
+    <dimen name="header_text_size">35sp</dimen>
+    <dimen name="tab_layout_satellite_text_size">13sp</dimen>
 </resources>

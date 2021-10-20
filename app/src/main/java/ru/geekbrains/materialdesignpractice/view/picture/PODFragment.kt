@@ -1,6 +1,9 @@
 package ru.geekbrains.materialdesignpractice.view.picture
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.*
 import androidx.core.content.ContextCompat
@@ -12,13 +15,17 @@ import ru.geekbrains.materialdesignpractice.R
 import ru.geekbrains.materialdesignpractice.api.ApiActivity
 import ru.geekbrains.materialdesignpractice.databinding.FragmentMainBinding
 import ru.geekbrains.materialdesignpractice.view.MainActivity
+import ru.geekbrains.materialdesignpractice.view.recycler.RecyclerActivity
 import ru.geekbrains.materialdesignpractice.view.settings.SettingsFragment
 import ru.geekbrains.materialdesignpractice.view.showSnackBar
 import ru.geekbrains.materialdesignpractice.view.showToastLong
+import ru.geekbrains.materialdesignpractice.view.showToastShort
 import ru.geekbrains.materialdesignpractice.viewmodel.NASAData
 import ru.geekbrains.materialdesignpractice.viewmodel.NASAViewModel
 
 class PODFragment : Fragment() {
+
+    private var isExpanded = false
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
@@ -42,8 +49,10 @@ class PODFragment : Fragment() {
     private fun setActionBar() {
         (context as MainActivity).setSupportActionBar(binding.bottomAppBar)
         setHasOptionsMenu(true)
+        setInitialState()
         binding.fab.setOnClickListener {
             if (isMain) {
+                expandFAB()
                 isMain = false
                 binding.bottomAppBar.navigationIcon = null
                 binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
@@ -55,13 +64,14 @@ class PODFragment : Fragment() {
                 )
                 binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar_other_screen)
             } else {
+                collapseFAB()
                 isMain = true
                 binding.bottomAppBar.navigationIcon =
                     ContextCompat.getDrawable(
                         requireContext(),
                         R.drawable.ic_hamburger_menu_bottom_bar
                     )
-                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
                 binding.fab.setImageDrawable(
                     ContextCompat.getDrawable(
                         requireContext(),
@@ -71,6 +81,86 @@ class PODFragment : Fragment() {
                 binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
             }
         }
+    }
+
+    private fun setInitialState() {
+        binding.transparentBackground.apply {
+            alpha = 0f
+        }
+        binding.toDoNotesContainer.apply {
+            alpha = 0f
+            isClickable = false
+        }
+        binding.optionTwoContainer.apply {
+            alpha = 0f
+            isClickable = false
+        }
+    }
+
+    private fun expandFAB() {
+        isExpanded = true
+        binding.optionTwoContainer.animate()
+            .alpha(1f)
+            .setDuration(300)
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    binding.optionTwoContainer.isClickable = true
+                    binding.optionTwoContainer.setOnClickListener {
+                        binding.optionTwoContainer.showToastShort(getString(R.string.option_two))
+                    }
+                }
+            })
+
+        binding.toDoNotesContainer.animate()
+            .alpha(1f)
+            .setDuration(300)
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    binding.toDoNotesContainer.isClickable = true
+                    binding.toDoNotesContainer.setOnClickListener {
+                        startActivity(Intent(context, RecyclerActivity::class.java))
+                    }
+                }
+            })
+
+        binding.transparentBackground.animate()
+            .alpha(0.9f)
+            .setDuration(300)
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    binding.transparentBackground.isClickable = true
+                }
+            })
+    }
+
+    private fun collapseFAB() {
+        isExpanded = false
+        binding.optionTwoContainer.animate()
+            .alpha(0f)
+            .setDuration(300)
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    binding.optionTwoContainer.isClickable = false
+                }
+            })
+
+        binding.toDoNotesContainer.animate()
+            .alpha(0f)
+            .setDuration(300)
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    binding.toDoNotesContainer.isClickable = false
+                }
+            })
+
+        binding.transparentBackground.animate()
+            .alpha(0f)
+            .setDuration(300)
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    binding.transparentBackground.isClickable = false
+                }
+            })
     }
 
     override fun onDestroyView() {
@@ -99,7 +189,13 @@ class PODFragment : Fragment() {
                     placeholder(R.drawable.progress_animation)
                     error(R.drawable.ic_load_error_vector)
                 }
-                binding.descriptionTextView.text = data.serverResponseData.explanation
+                data.serverResponseData.explanation?.let {
+                    binding.descriptionTextView.text = it
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        binding.descriptionTextView.typeface =
+                            resources.getFont(R.font.x_files_font)
+                    }
+                }
             }
         }
     }

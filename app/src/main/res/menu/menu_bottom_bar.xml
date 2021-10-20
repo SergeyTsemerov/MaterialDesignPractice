@@ -2,15 +2,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/appBarDescription"
-        android:icon="@drawable/ic_baseline_description_24"
-        android:title="@string/description_of_the_POD"
-        app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/appBarSettings"
-        android:icon="@drawable/ic_settings_menu"
-        android:title="@string/settings"
+        android:id="@+id/additionalNASAContent"
+        android:icon="@drawable/rocket"
+        android:title="@string/additional_nasa_content"
         app:showAsAction="ifRoom" />
 
     <item
@@ -18,4 +12,12 @@
         android:icon="@drawable/ic_wikipedia_for_menu"
         android:title="@string/wikipedia"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/appBarSettings"
+        android:icon="@drawable/settings"
+        android:title="@string/settings"
+        app:showAsAction="ifRoom" />
+
+
 </menu>
