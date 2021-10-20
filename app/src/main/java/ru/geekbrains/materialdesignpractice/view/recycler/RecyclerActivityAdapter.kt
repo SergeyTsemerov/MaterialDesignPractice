@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.MotionEventCompat
 import androidx.recyclerview.widget.RecyclerView
 import ru.geekbrains.materialdesignpractice.databinding.ActivityRecyclerItemHeaderBinding
 import ru.geekbrains.materialdesignpractice.databinding.ActivityRecyclerItemToDoNoteBinding
@@ -86,7 +85,7 @@ class RecyclerActivityAdapter(
                     View.GONE
                 }
                 dragHandleImageView.setOnTouchListener { _, event ->
-                    if (MotionEventCompat.getActionMasked(event) == MotionEvent.ACTION_DOWN) {
+                    if (event.actionMasked == MotionEvent.ACTION_DOWN) {
                         dragListener.onStartDrag(this@ToDoNoteViewHolder)
                     }
                     false

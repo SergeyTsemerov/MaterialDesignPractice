@@ -5,11 +5,6 @@ import android.animation.AnimatorListenerAdapter
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableStringBuilder
-import android.text.method.LinkMovementMethod
-import android.text.style.ClickableSpan
-import android.text.style.ForegroundColorSpan
 import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -200,27 +195,6 @@ class PODFragment : Fragment() {
                         binding.descriptionTextView.typeface =
                             resources.getFont(R.font.x_files_font)
                     }
-                    val spannable = SpannableStringBuilder(it)
-
-                    spannable.setSpan(
-                        ForegroundColorSpan(resources.getColor(R.color.red_A700)),
-                        0,
-                        200,
-                        Spannable.SPAN_INCLUSIVE_INCLUSIVE
-                    )
-                    spannable.setSpan(
-                        ForegroundColorSpan(resources.getColor(R.color.colorAccent)),
-                        200,
-                        400,
-                        Spannable.SPAN_INCLUSIVE_INCLUSIVE
-                    )
-                    spannable.setSpan(object : ClickableSpan() {
-                        override fun onClick(view: View) {
-                            view.showToastShort("Click")
-                        }
-                    }, 56, 100, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-                    binding.descriptionTextView.movementMethod = LinkMovementMethod.getInstance()
-                    binding.descriptionTextView.text = spannable
                 }
             }
         }
