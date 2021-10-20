@@ -3,6 +3,7 @@ package ru.geekbrains.materialdesignpractice.view.picture
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.*
 import androidx.core.content.ContextCompat
@@ -14,6 +15,7 @@ import ru.geekbrains.materialdesignpractice.R
 import ru.geekbrains.materialdesignpractice.api.ApiActivity
 import ru.geekbrains.materialdesignpractice.databinding.FragmentMainBinding
 import ru.geekbrains.materialdesignpractice.view.MainActivity
+import ru.geekbrains.materialdesignpractice.view.recycler.RecyclerActivity
 import ru.geekbrains.materialdesignpractice.view.settings.SettingsFragment
 import ru.geekbrains.materialdesignpractice.view.showSnackBar
 import ru.geekbrains.materialdesignpractice.view.showToastLong
@@ -85,7 +87,7 @@ class PODFragment : Fragment() {
         binding.transparentBackground.apply {
             alpha = 0f
         }
-        binding.optionOneContainer.apply {
+        binding.toDoNotesContainer.apply {
             alpha = 0f
             isClickable = false
         }
@@ -109,14 +111,14 @@ class PODFragment : Fragment() {
                 }
             })
 
-        binding.optionOneContainer.animate()
+        binding.toDoNotesContainer.animate()
             .alpha(1f)
             .setDuration(300)
             .setListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) {
-                    binding.optionOneContainer.isClickable = true
-                    binding.optionOneContainer.setOnClickListener {
-                        binding.optionOneContainer.showToastShort(getString(R.string.option_one))
+                    binding.toDoNotesContainer.isClickable = true
+                    binding.toDoNotesContainer.setOnClickListener {
+                        startActivity(Intent(context, RecyclerActivity::class.java))
                     }
                 }
             })
@@ -142,12 +144,12 @@ class PODFragment : Fragment() {
                 }
             })
 
-        binding.optionOneContainer.animate()
+        binding.toDoNotesContainer.animate()
             .alpha(0f)
             .setDuration(300)
             .setListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) {
-                    binding.optionOneContainer.isClickable = false
+                    binding.toDoNotesContainer.isClickable = false
                 }
             })
 
@@ -187,7 +189,13 @@ class PODFragment : Fragment() {
                     placeholder(R.drawable.progress_animation)
                     error(R.drawable.ic_load_error_vector)
                 }
-                binding.descriptionTextView.text = data.serverResponseData.explanation
+                data.serverResponseData.explanation?.let {
+                    binding.descriptionTextView.text = it
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        binding.descriptionTextView.typeface =
+                            resources.getFont(R.font.x_files_font)
+                    }
+                }
             }
         }
     }

@@ -18,9 +18,12 @@
     <string name="earth">Earth</string>
     <string name="additional_nasa_content">Additional NASA Content</string>
     <string name="wikipedia">Wikipedia</string>
-    <string name="option_one">OptionOne</string>
+    <string name="to_do_notes">To Do Notes</string>
     <string name="option_one_icon">OptionOneIcon</string>
     <string name="option_two">OptionTwo</string>
     <string name="option_two_icon">OptionTwoIcon</string>
     <string name="hint_text_wiki">Click on W to Explore</string>
+    <string name="to_do">ToDo</string>
+    <string name="header">Header</string>
+    <string name="to_do_note">To Do Note</string>
 </resources>

@@ -8,14 +8,16 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/wikipediaSearch"
+        android:icon="@drawable/ic_wikipedia_for_menu"
+        android:title="@string/wikipedia"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/appBarSettings"
         android:icon="@drawable/settings"
         android:title="@string/settings"
         app:showAsAction="ifRoom" />
 
-    <item
-        android:id="@+id/wikipediaSearch"
-        android:icon="@drawable/ic_wikipedia_for_menu"
-        android:title="@string/wikipedia"
-        app:showAsAction="ifRoom" />
+
 </menu>

@@ -50,7 +50,7 @@
             android:id="@+id/inputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/exocet_heavy"
+            android:fontFamily="@font/diablo_font"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,7 +58,7 @@
         android:id="@+id/helperText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/exocet_heavy"
+        android:fontFamily="@font/diablo_font"
         android:text="@string/hint_text_wiki"
         android:textAlignment="center"
         android:textSize="@dimen/hint_wiki_text_size"

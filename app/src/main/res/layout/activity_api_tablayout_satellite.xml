@@ -11,6 +11,6 @@
         android:drawablePadding="@dimen/tab_layout_drawable_padding"
         android:text="@string/satellite"
         android:textColor="@color/black"
-        android:textSize="@dimen/tab_layout_item_text_size"/>
+        android:textSize="@dimen/tab_layout_satellite_text_size"/>
 
 </FrameLayout>

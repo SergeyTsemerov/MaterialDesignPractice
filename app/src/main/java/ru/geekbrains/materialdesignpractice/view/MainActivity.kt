@@ -1,7 +1,7 @@
 package ru.geekbrains.materialdesignpractice.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import ru.geekbrains.materialdesignpractice.R
 import ru.geekbrains.materialdesignpractice.databinding.ActivityMainBinding
 import ru.geekbrains.materialdesignpractice.view.picture.PODFragment
@@ -17,15 +17,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_MaterialDesignPractice)
         super.onCreate(savedInstanceState)
         setTheme(getRealStyle(getCurrentTheme()))
-        binding =  ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 
     override fun onResume() {
         super.onResume()
-        supportFragmentManager.beginTransaction().replace(R.id.container,PODFragment.newInstance()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.container, PODFragment.newInstance())
+            .commit()
     }
 
     fun setCurrentTheme(currentTheme: Int) {
