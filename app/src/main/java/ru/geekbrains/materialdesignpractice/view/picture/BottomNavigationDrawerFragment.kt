@@ -34,6 +34,7 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
                     binding.navigationView.showToastShort(getString(R.string.settings))
                 }
             }
+            dismiss()
             true
         }
     }

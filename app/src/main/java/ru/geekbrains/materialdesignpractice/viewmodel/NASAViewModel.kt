@@ -39,10 +39,11 @@ class NASAViewModel(
 
     fun sendSatelliteImageRequest() {
         liveDataToObserve.postValue(NASAData.Loading)
-        val date = getDayBeforeYesterday()
-        val lon = 37.618423
-        val lat = 55.751244
-        val dim = 0.1
+        val date = "2018-01-01"
+        // Houston, Texas
+        val lon = -95.33
+        val lat = 29.78
+        val dim = 0.10
         val apiKey = BuildConfig.NASA_API_KEY
         if (apiKey.isBlank()) {
             NASAData.Error(Throwable(API_KEY_NOT_FOUND))
